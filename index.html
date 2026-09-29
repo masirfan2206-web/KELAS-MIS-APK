@@ -183,8 +183,6 @@
 
                 <!-- VIEW: DASHBOARD INFORMASI -->
                 <div id="view-info-dashboard" class="view-panel space-y-5">
-
-                    <!-- 1. BANNER UTAMA INFORMASI MADRASAH -->
                     <section id="banner-section" class="custom-theme-bg rounded-2xl p-5 text-white flex justify-between items-center relative overflow-hidden shadow-lg batik-pattern">
                         <div class="space-y-1.5 max-w-xl z-10">
                             <div id="banner-badge" class="inline-block px-2.5 py-0.5 bg-black/30 backdrop-blur-md rounded text-[10px] font-black uppercase tracking-wider text-white">
@@ -198,7 +196,6 @@
                         </div>
                     </section>
 
-                    <!-- 2. PENCARIAN SINGKAT SANTRI -->
                     <section class="bg-white rounded-2xl p-4 border border-stone-200/80 shadow-sm space-y-3">
                         <div class="flex items-center gap-2 text-xs font-extrabold text-slate-800">
                             <i data-lucide="search" class="w-4 h-4 text-emerald-600"></i> <span id="dashboard-search-label">Pencarian Santri:</span>
@@ -210,7 +207,6 @@
                         <div id="dashboard-search-results" class="hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5 pt-2"></div>
                     </section>
 
-                    <!-- 3. CATATAN HARIAN & AGENDA (OTOMATIS BERBASIS WAKTU) -->
                     <section class="bg-white rounded-2xl p-4 border border-stone-200/80 shadow-sm space-y-3">
                         <div class="flex justify-between items-center border-b pb-2">
                             <h3 class="font-extrabold text-xs text-slate-900 flex items-center gap-2">
@@ -221,7 +217,6 @@
                         <div id="notes-agenda-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5 max-h-[220px] overflow-y-auto pr-1 text-xs"></div>
                     </section>
 
-                    <!-- 4. JADWAL PELAJARAN HARI INI & BESOK -->
                     <section class="grid grid-cols-1 lg:grid-cols-2 gap-4">
                         <div class="bg-white rounded-2xl p-4 border border-stone-200/80 shadow-sm space-y-3">
                             <div class="flex justify-between items-center border-b pb-2">
@@ -244,7 +239,6 @@
                         </div>
                     </section>
 
-                    <!-- 5. STATISTIK RINGKASAN JUMLAH SANTRI -->
                     <section class="grid grid-cols-2 sm:grid-cols-4 gap-3">
                         <div class="bg-white rounded-2xl p-3 border border-stone-200/80 shadow-sm text-center">
                             <div class="text-[10px] text-stone-500 font-bold uppercase">Santri Aktif</div>
@@ -264,7 +258,6 @@
                         </div>
                     </section>
 
-                    <!-- 6. RINCIAN JUMLAH SANTRI PER DOMISILI -->
                     <section class="bg-white rounded-2xl p-4 border border-stone-200/80 shadow-sm space-y-3">
                         <div class="flex justify-between items-center border-b pb-2">
                             <h3 class="font-extrabold text-xs text-slate-900 flex items-center gap-2">
@@ -275,7 +268,6 @@
                         <div id="domisili-breakdown-container" class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 text-xs"></div>
                     </section>
 
-                    <!-- 7. REKAPITULASI HAFALAN KITAB -->
                     <section class="bg-white rounded-2xl p-5 border border-stone-200/80 shadow-sm space-y-4">
                         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b pb-3">
                             <h3 class="font-extrabold text-sm text-slate-900 flex items-center gap-2">
@@ -296,7 +288,6 @@
                         <div id="dashboard-kitab-sections" class="space-y-3"></div>
                     </section>
 
-                    <!-- DIAGRAM CAPAIAN HAFALAN -->
                     <section class="bg-white rounded-2xl p-5 border border-stone-200/80 shadow-sm space-y-3">
                         <h3 class="font-extrabold text-xs text-slate-900 flex items-center gap-2 border-b pb-2">
                             <i data-lucide="bar-chart-3" class="w-4 h-4 text-emerald-600"></i> Diagram Capaian Hafalan Kitab Santri Aktif
@@ -307,8 +298,31 @@
                     </section>
                 </div>
 
-                <!-- VIEW: PINTASAN KASIR SANGU (MODE INFORMASI - KHUSUS PENARIKAN/JAJAN KELUAR) -->
+                <!-- VIEW: PINTASAN KASIR SANGU (MODE INFORMASI) -->
                 <div id="view-info-kasir-sangu" class="view-panel space-y-4 hidden">
+                    <div class="bg-gradient-to-r from-amber-600 to-amber-700 rounded-2xl p-5 text-white shadow-md space-y-3">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <span class="text-[10px] font-black uppercase tracking-widest bg-black/20 px-2.5 py-1 rounded text-amber-100">KAS UTAMA SANGU SANTRI</span>
+                                <h3 class="text-xs font-semibold text-amber-100 mt-2">Total Saldo Sangu Pegangan Pengurus:</h3>
+                                <div id="info-kasir-total-sangu-amount" class="text-2xl sm:text-3xl font-black font-mono mt-0.5 tracking-tight">Rp 0</div>
+                            </div>
+                            <div class="p-3 bg-white/10 rounded-2xl backdrop-blur-xs">
+                                <i data-lucide="vault" class="w-7 h-7 text-amber-200"></i>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-2 pt-2 border-t border-white/20 text-xs">
+                            <div>
+                                <span class="text-[10px] text-amber-200 block">Santri Terdaftar:</span>
+                                <strong id="info-kasir-total-registered" class="font-extrabold text-white text-sm">0 Santri</strong>
+                            </div>
+                            <div>
+                                <span class="text-[10px] text-amber-200 block">Rata-Rata Saldo/Santri:</span>
+                                <strong id="info-kasir-avg-balance" class="font-mono font-extrabold text-white text-sm">Rp 0</strong>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="bg-white rounded-2xl p-5 border border-amber-200/80 shadow-sm space-y-4">
                         <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-3 border-b pb-3">
                             <div>
@@ -322,20 +336,35 @@
                             </button>
                         </div>
 
+                        <!-- FILTERISASI RIWAYAT KASIR -->
+                        <div class="flex flex-wrap gap-2 text-xs bg-amber-50/50 p-3 rounded-xl border border-amber-200/60">
+                            <input type="text" id="filter-kasir-search" onkeyup="renderKasirHistoryTable()" placeholder="Cari nama santri..." class="p-2 rounded-xl border bg-white outline-none">
+                            <select id="filter-kasir-type" onchange="renderKasirHistoryTable()" class="p-2 rounded-xl border bg-white font-bold outline-none">
+                                <option value="all">Semua Jenis Transaksi</option>
+                                <option value="Tarik">Hanya Penarikan (Jajan)</option>
+                                <option value="Setor">Hanya Setoran</option>
+                            </select>
+                            <select id="filter-kasir-time" onchange="renderKasirHistoryTable()" class="p-2 rounded-xl border bg-white font-bold outline-none">
+                                <option value="all">Semua Waktu</option>
+                                <option value="today">Hari Ini</option>
+                                <option value="7days">7 Hari Terakhir</option>
+                            </select>
+                        </div>
+
                         <div>
                             <h4 class="font-extrabold text-xs text-slate-800 mb-2 uppercase tracking-wider flex items-center gap-1.5">
-                                <i data-lucide="history" class="w-4 h-4 text-amber-600"></i> Riwayat Penarikan Jajan Kasir Terbaru
+                                <i data-lucide="history" class="w-4 h-4 text-amber-600"></i> Riwayat Transaksi Kasir
                             </h4>
                             <div class="overflow-x-auto border rounded-xl">
                                 <table class="w-full text-xs text-left">
                                     <thead class="bg-amber-50 font-mono text-amber-900">
                                         <tr>
-                                            <th class="p-3">Hari, Tanggal & Jam</th>
+                                            <th class="p-3">Waktu & Tanggal</th>
                                             <th class="p-3">Nama Santri</th>
-                                            <th class="p-3">Jenis Transaksi</th>
+                                            <th class="p-3">Jenis</th>
                                             <th class="p-3 text-right">Nominal</th>
                                             <th class="p-3">Keterangan</th>
-                                            <th class="p-3 text-center">Aksi Edit</th>
+                                            <th class="p-3 text-center">Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody id="kasir-history-tbody" class="divide-y bg-white"></tbody>
@@ -652,6 +681,29 @@
                 <!-- MODE KELOLA VIEWS -->
                 <!-- VIEW KELOLA TABUNGAN SANGU SANTRI -->
                 <div id="view-kelola-sangu" class="view-panel space-y-4 hidden">
+                    <div class="bg-gradient-to-r from-amber-600 to-amber-700 rounded-2xl p-5 text-white shadow-md space-y-3">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <span class="text-[10px] font-black uppercase tracking-widest bg-black/20 px-2.5 py-1 rounded text-amber-100">KAS UTAMA TABUNGAN SANGU</span>
+                                <h3 class="text-xs font-semibold text-amber-100 mt-2">Total Uang Sangu Fisik Dipegang Pengurus:</h3>
+                                <div id="admin-kasir-total-sangu-amount" class="text-2xl sm:text-3xl font-black font-mono mt-0.5 tracking-tight">Rp 0</div>
+                            </div>
+                            <div class="p-3 bg-white/10 rounded-2xl backdrop-blur-xs">
+                                <i data-lucide="vault" class="w-7 h-7 text-amber-200"></i>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-2 pt-2 border-t border-white/20 text-xs">
+                            <div>
+                                <span class="text-[10px] text-amber-200 block">Total Santri Terdaftar:</span>
+                                <strong id="admin-kasir-total-registered" class="font-extrabold text-white text-sm">0 Santri</strong>
+                            </div>
+                            <div>
+                                <span class="text-[10px] text-amber-200 block">Rata-Rata Saldo/Santri:</span>
+                                <strong id="admin-kasir-avg-balance" class="font-mono font-extrabold text-white text-sm">Rp 0</strong>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="bg-white rounded-2xl p-5 border border-amber-200/80 shadow-sm space-y-4">
                         <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-3 border-b pb-3">
                             <div>
@@ -878,7 +930,8 @@
     </div>
 
     <!-- MODALS SECTION -->
-    <!-- MODAL POPUP PINTASAN KASIR (KHUSUS PENARIKAN/JAJAN & SANTRI TERDAFTAR ONLY) -->
+
+    <!-- MODAL INPUT TRANSAKSI SANGU (LEBIH RINGKAS & CEPAT) -->
     <div id="modal-sangu-action" class="fixed inset-0 bg-slate-950/70 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
         <div class="bg-white rounded-2xl p-5 max-w-sm w-full space-y-4 shadow-2xl text-xs">
             <div class="flex justify-between items-center border-b pb-2">
@@ -887,14 +940,13 @@
                 </h3>
                 <button onclick="closeSanguActionModal()" class="text-stone-400 hover:text-slate-900"><i data-lucide="x" class="w-5 h-5"></i></button>
             </div>
-            <form onsubmit="processSanguTransaction(event)" class="space-y-3">
+            <form onsubmit="submitSanguFormToPinModal(event)" class="space-y-3">
                 <input type="hidden" id="sangu-santri-id">
                 <input type="hidden" id="sangu-trans-type" value="Tarik">
                 <input type="hidden" id="sangu-edit-index" value="-1">
 
-                <!-- DROPDOWN SANTRI KHUSUS TERDAFTAR TABUNGAN -->
                 <div id="sangu-select-container">
-                    <label class="block font-semibold mb-1">Pilih Santri (Terdaftar Tabungan) *</label>
+                    <label class="block font-semibold mb-1">Pilih Santri *</label>
                     <select id="kasir-santri-select" onchange="updateKasirSelectedSantriInfo()" class="w-full p-2.5 rounded-lg border bg-amber-50/50 font-bold outline-none text-xs text-slate-900"></select>
                 </div>
 
@@ -912,9 +964,8 @@
                     <input type="number" id="sangu-nominal" required placeholder="Pilih preset / ketik nominal..." class="w-full p-2.5 rounded-lg border bg-stone-50 outline-none font-mono text-sm font-bold text-slate-900">
                 </div>
 
-                <!-- PRESET NOMINAL CEPAT REKOMENDASI BARU: 5k, 10k, 20k, 50k -->
                 <div id="sangu-preset-box" class="space-y-1">
-                    <label class="block font-semibold text-[11px] text-stone-500">Pilih Nominal Cepat (Sekali Klik):</label>
+                    <label class="block font-semibold text-[11px] text-stone-500">Nominal Cepat (Klik Sekali):</label>
                     <div class="grid grid-cols-4 gap-1.5">
                         <button type="button" onclick="setSanguNominal(5000)" class="p-2 bg-amber-50 hover:bg-amber-200 font-extrabold text-amber-900 rounded-lg border border-amber-200 text-center shadow-2xs">5k</button>
                         <button type="button" onclick="setSanguNominal(10000)" class="p-2 bg-amber-50 hover:bg-amber-200 font-extrabold text-amber-900 rounded-lg border border-amber-200 text-center shadow-2xs">10k</button>
@@ -928,16 +979,98 @@
                     <input type="text" id="sangu-note" placeholder="Contoh: Jajan kantin / Beli kitab" class="w-full p-2.5 rounded-lg border bg-stone-50 outline-none">
                 </div>
 
-                <div class="pt-2 border-t">
-                    <label class="block font-bold mb-1 text-rose-700">Verifikasi PIN Keamanan Kasir *</label>
-                    <input type="password" id="sangu-action-pin-input" placeholder="Masukkan PIN" maxlength="4" inputmode="numeric" required class="w-full p-2.5 border rounded-lg bg-rose-50 text-center font-mono font-bold text-sm outline-none">
+                <div class="flex justify-end gap-2 pt-2 border-t">
+                    <button type="button" onclick="closeSanguActionModal()" class="px-4 py-2 bg-stone-200 rounded-xl font-bold">Batal</button>
+                    <button type="submit" id="sangu-submit-btn" class="px-5 py-2 bg-amber-600 text-white font-bold rounded-xl shadow hover:bg-amber-500">Lanjut Verifikasi PIN</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- POP-UP VERIFIKASI PIN KASIR TERPISAH (DENGAN RINGKASAN KONFIRMASI) -->
+    <div id="modal-sangu-pin-verify" class="fixed inset-0 bg-slate-950/70 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-white rounded-2xl p-5 max-w-sm w-full space-y-4 shadow-2xl text-xs">
+            <div class="text-center space-y-1 border-b pb-3">
+                <h3 class="font-black text-sm text-slate-900 flex items-center justify-center gap-1.5">
+                    <i data-lucide="shield-check" class="w-4 h-4 text-amber-600"></i> Konfirmasi PIN Transaksi
+                </h3>
+                <p class="text-[11px] text-stone-500">Periksa detail transaksi sebelum memasukkan PIN</p>
+            </div>
+
+            <!-- RINGKASAN KONFIRMASI TRANSAKSI -->
+            <div class="bg-amber-50/80 p-3.5 rounded-xl border border-amber-200/80 space-y-2">
+                <div class="flex justify-between border-b border-amber-200/60 pb-1.5">
+                    <span class="text-stone-500">Santri:</span>
+                    <strong id="pin-confirm-nama" class="text-slate-900 font-extrabold truncate max-w-[150px]">Nama Santri</strong>
+                </div>
+                <div class="flex justify-between border-b border-amber-200/60 pb-1.5">
+                    <span class="text-stone-500">Jenis Transaksi:</span>
+                    <strong id="pin-confirm-type" class="font-extrabold text-amber-800">Tarik Jajan</strong>
+                </div>
+                <div class="flex justify-between">
+                    <span class="text-stone-500">Nominal:</span>
+                    <strong id="pin-confirm-amount" class="font-mono text-base font-black text-amber-900">Rp 0</strong>
+                </div>
+            </div>
+
+            <form onsubmit="executeVerifiedSanguTransaction(event)" class="space-y-3">
+                <div>
+                    <label class="block font-bold mb-1 text-center text-rose-700">Masukkan PIN Keamanan Kasir (4 Angka) *</label>
+                    <input type="password" id="sangu-action-pin-input" placeholder="****" maxlength="4" inputmode="numeric" required class="w-full p-2.5 border border-rose-300 rounded-xl bg-rose-50 text-center font-mono font-black text-base outline-none focus:ring-2 focus:ring-rose-500">
                 </div>
 
                 <div class="flex justify-end gap-2 pt-2 border-t">
-                    <button type="button" onclick="closeSanguActionModal()" class="px-4 py-2 bg-stone-200 rounded-xl font-bold">Batal</button>
-                    <button type="submit" id="sangu-submit-btn" class="px-5 py-2 bg-amber-600 text-white font-bold rounded-xl shadow hover:bg-amber-500">Proses Penarikan</button>
+                    <button type="button" onclick="closeSanguPinModal()" class="w-1/3 py-2 bg-stone-200 rounded-xl font-bold">Batal</button>
+                    <button type="submit" class="w-2/3 py-2 bg-amber-600 text-white font-bold rounded-xl shadow hover:bg-amber-500">Eksekusi Transaksi</button>
                 </div>
             </form>
+        </div>
+    </div>
+
+    <!-- POP-UP DETAIL KARTU TRANSAKSI TRANSAKSI SANGU -->
+    <div id="modal-sangu-detail-trans" class="fixed inset-0 bg-slate-950/70 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-white rounded-2xl p-5 max-w-sm w-full space-y-4 shadow-2xl text-xs">
+            <div class="flex justify-between items-center border-b pb-2">
+                <h3 class="font-black text-sm text-slate-900 flex items-center gap-2">
+                    <i data-lucide="receipt" class="w-4 h-4 text-amber-600"></i> Detail Kartu Transaksi
+                </h3>
+                <button onclick="closeDetailTransModal()" class="text-stone-400 hover:text-slate-900"><i data-lucide="x" class="w-5 h-5"></i></button>
+            </div>
+
+            <div class="bg-stone-50 p-4 rounded-xl border border-stone-200 space-y-2.5">
+                <div class="flex justify-between border-b pb-1.5">
+                    <span class="text-stone-500">Waktu Transaksi:</span>
+                    <strong id="trans-detail-date" class="font-mono text-slate-800 text-[11px]">Selasa, 29 Sep 2026</strong>
+                </div>
+                <div class="flex justify-between border-b pb-1.5">
+                    <span class="text-stone-500">Nama Santri:</span>
+                    <strong id="trans-detail-nama" class="text-slate-900 font-extrabold">Nama Santri</strong>
+                </div>
+                <div class="flex justify-between border-b pb-1.5">
+                    <span class="text-stone-500">Jenis Transaksi:</span>
+                    <strong id="trans-detail-type" class="font-bold">Setor / Tarik</strong>
+                </div>
+                <div class="flex justify-between border-b pb-1.5">
+                    <span class="text-stone-500">Nominal:</span>
+                    <strong id="trans-detail-amount" class="font-mono text-base font-black text-slate-900">Rp 0</strong>
+                </div>
+                <div class="flex justify-between">
+                    <span class="text-stone-500">Keterangan:</span>
+                    <span id="trans-detail-note" class="font-semibold text-slate-700 italic max-w-[150px] text-right">-</span>
+                </div>
+            </div>
+
+            <div class="pt-2 flex justify-between gap-2 border-t">
+                <button id="btn-trans-delete" class="px-3.5 py-2 bg-rose-600 hover:bg-rose-500 text-white font-bold rounded-xl text-xs flex items-center gap-1 shadow">
+                    <i data-lucide="trash-2" class="w-3.5 h-3.5"></i> Hapus
+                </button>
+                <div class="flex gap-2">
+                    <button id="btn-trans-edit" class="px-3.5 py-2 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl text-xs flex items-center gap-1 shadow">
+                        <i data-lucide="edit" class="w-3.5 h-3.5"></i> Edit
+                    </button>
+                    <button onclick="closeDetailTransModal()" class="px-4 py-2 bg-stone-200 text-slate-800 font-bold rounded-xl text-xs">Tutup</button>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -1037,7 +1170,7 @@
                     <div class="p-2 border rounded-lg"><span class="text-stone-400 block">Alamat:</span><strong id="detail-santri-alamat" class="text-slate-800">-</strong></div>
                 </div>
 
-                <!-- KARTU SALDO SANGU SANTRI (HANYA TAMPIL JIKA TERDAFTAR OTOMATIS) -->
+                <!-- KARTU SALDO SANGU SANTRI -->
                 <div id="detail-sangu-card-box" class="p-3 bg-amber-50 border border-amber-200 rounded-xl space-y-2 cursor-pointer hover:bg-amber-100/60 transition hidden" onclick="openSanguSummaryPopupFromProfile()">
                     <div class="flex justify-between items-center">
                         <span class="font-bold text-amber-900 flex items-center gap-1.5"><i data-lucide="wallet" class="w-3.5 h-3.5 text-amber-700"></i> Saldo Tabungan Sangu:</span>
@@ -1330,7 +1463,6 @@
                 .catch(err => console.error('Service Worker Registration Failed!', err));
         }
 
-        // URL GOOGLE APPS SCRIPT TERBARU HASIL DEPLOY ANDA
         const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwqwOUkLh22EIJ96vAx2Q-KMxIm1xq2ECa2PSDcw4PTHmQuy3hS1qz6s0DijKG9y5h4TA/exec";
 
         const firebaseConfig = {
@@ -1350,6 +1482,7 @@
         let adminPin = "1234";
         let currentTheme = "theme-emerald";
         let currentDetailSantriId = null;
+        let pendingSanguPayload = null;
 
         let bannerData = {
             appTitle: "KELAS ku",
@@ -1678,6 +1811,7 @@
             document.getElementById('profile-announcement-text').value = announcement;
             document.getElementById('profile-search-label').value = bannerData.searchLabel;
 
+            renderSanguSummaryCards();
             renderTodayScheduleAndAgenda();
             renderDashboardKitabSections();
             renderDashboardChart();
@@ -1697,6 +1831,29 @@
             renderAdminJadwalTable();
             renderAdminQKitabTable();
             renderAdminPembimbingHafalanTable();
+        }
+
+        function renderSanguSummaryCards() {
+            const registeredSantri = santriList.filter(s => s.status === 'Aktif' && s.isSanguRegistered);
+            const totalSangu = registeredSantri.reduce((sum, s) => sum + (s.sanguBalance || 0), 0);
+            const totalCount = registeredSantri.length;
+            const avgBalance = totalCount > 0 ? Math.round(totalSangu / totalCount) : 0;
+
+            const formattedTotal = `Rp ${totalSangu.toLocaleString('id-ID')}`;
+            const formattedAvg = `Rp ${avgBalance.toLocaleString('id-ID')}`;
+            const countText = `${totalCount} Santri`;
+
+            if (document.getElementById('info-kasir-total-sangu-amount')) {
+                document.getElementById('info-kasir-total-sangu-amount').innerText = formattedTotal;
+                document.getElementById('info-kasir-total-registered').innerText = countText;
+                document.getElementById('info-kasir-avg-balance').innerText = formattedAvg;
+            }
+
+            if (document.getElementById('admin-kasir-total-sangu-amount')) {
+                document.getElementById('admin-kasir-total-sangu-amount').innerText = formattedTotal;
+                document.getElementById('admin-kasir-total-registered').innerText = countText;
+                document.getElementById('admin-kasir-avg-balance').innerText = formattedAvg;
+            }
         }
 
         function renderTodayScheduleAndAgenda() {
@@ -1949,7 +2106,7 @@
             });
         }
 
-        // TABUNGAN SANGU (MODE KELOLA)
+        // TABUNGAN SANGU & LOGIKA KASIR TERBARU
         function renderSanguTable() {
             const searchVal = document.getElementById('search-sangu-input').value.toLowerCase();
             const fDomisili = document.getElementById('filter-sangu-domisili').value;
@@ -1998,17 +2155,13 @@
             document.getElementById('sangu-edit-index').value = -1;
             document.getElementById('sangu-nominal').value = '';
             document.getElementById('sangu-note').value = '';
-            document.getElementById('sangu-action-pin-input').value = '';
 
             document.getElementById('sangu-modal-title').innerHTML = '<i data-lucide="arrow-down-circle" class="w-4 h-4 text-emerald-600"></i> Setor Sangu Santri';
             document.getElementById('sangu-submit-btn').className = "px-5 py-2 bg-emerald-600 text-white font-bold rounded-xl shadow hover:bg-emerald-500";
-            document.getElementById('sangu-submit-btn').innerText = "Simpan Setoran";
             document.getElementById('sangu-preset-box').classList.add('hidden');
 
             updateKasirSelectedSantriInfo();
-
             document.getElementById('modal-sangu-action').classList.remove('hidden');
-            setTimeout(() => document.getElementById('sangu-action-pin-input').focus(), 100);
             lucide.createIcons();
         }
 
@@ -2027,17 +2180,13 @@
             document.getElementById('sangu-edit-index').value = -1;
             document.getElementById('sangu-nominal').value = '';
             document.getElementById('sangu-note').value = '';
-            document.getElementById('sangu-action-pin-input').value = '';
 
             document.getElementById('sangu-modal-title').innerHTML = '<i data-lucide="shopping-bag" class="w-4 h-4 text-amber-600"></i> Tarik Uang Jajan Kasir';
             document.getElementById('sangu-submit-btn').className = "px-5 py-2 bg-amber-600 text-white font-bold rounded-xl shadow hover:bg-amber-500";
-            document.getElementById('sangu-submit-btn').innerText = "Proses Penarikan";
             document.getElementById('sangu-preset-box').classList.remove('hidden');
 
             updateKasirSelectedSantriInfo();
-
             document.getElementById('modal-sangu-action').classList.remove('hidden');
-            setTimeout(() => document.getElementById('sangu-action-pin-input').focus(), 100);
             lucide.createIcons();
         }
 
@@ -2052,9 +2201,8 @@
 
             document.getElementById('sangu-santri-nama').innerText = s.nama;
             document.getElementById('sangu-current-balance').innerText = `Rp ${(s.sanguBalance || 0).toLocaleString('id-ID')}`;
-            document.getElementById('sangu-action-pin-input').value = '';
 
-            if (editIndex >= 0 && s.sanguHistory[editIndex]) {
+            if (editIndex >= 0 && s.sanguHistory && s.sanguHistory[editIndex]) {
                 const item = s.sanguHistory[editIndex];
                 document.getElementById('sangu-nominal').value = item.amount;
                 document.getElementById('sangu-note').value = item.note || '';
@@ -2070,17 +2218,14 @@
             if (transType === 'Setor') {
                 title.innerHTML = '<i data-lucide="arrow-down-circle" class="w-4 h-4 text-emerald-600"></i> Setor Sangu Santri';
                 submitBtn.className = "px-5 py-2 bg-emerald-600 text-white font-bold rounded-xl shadow";
-                submitBtn.innerText = editIndex >= 0 ? "Simpan Perbaikan Transaksi" : "Simpan Setoran";
                 presetBox.classList.add('hidden');
             } else {
                 title.innerHTML = '<i data-lucide="shopping-bag" class="w-4 h-4 text-amber-600"></i> Tarik Uang Jajan Kasir';
                 submitBtn.className = "px-5 py-2 bg-amber-600 text-white font-bold rounded-xl shadow";
-                submitBtn.innerText = editIndex >= 0 ? "Simpan Perbaikan Transaksi" : "Proses Penarikan";
                 presetBox.classList.remove('hidden');
             }
 
             document.getElementById('modal-sangu-action').classList.remove('hidden');
-            setTimeout(() => document.getElementById('sangu-action-pin-input').focus(), 100);
             lucide.createIcons();
         }
 
@@ -2098,13 +2243,9 @@
 
         function closeSanguActionModal() { document.getElementById('modal-sangu-action').classList.add('hidden'); }
 
-        function processSanguTransaction(e) {
+        // ALUR DUA TAHAP: SUBMIT BUKA POPUP PIN
+        function submitSanguFormToPinModal(e) {
             e.preventDefault();
-            if (document.getElementById('sangu-action-pin-input').value !== adminPin) {
-                showToast("PIN Keamanan Salah!", "error");
-                return;
-            }
-
             const id = parseInt(document.getElementById('sangu-santri-id').value);
             const transType = document.getElementById('sangu-trans-type').value;
             const nominal = parseInt(document.getElementById('sangu-nominal').value);
@@ -2116,6 +2257,42 @@
                 return;
             }
 
+            const s = santriList.find(item => item.id === id);
+            if (!s) return;
+
+            // Simpan data transaksi sementara untuk verifikasi PIN
+            pendingSanguPayload = { id, transType, nominal, note, editIndex };
+
+            // Isi informasi preview ringkasan
+            document.getElementById('pin-confirm-nama').innerText = s.nama;
+            document.getElementById('pin-confirm-type').innerText = transType === 'Setor' ? 'Setor Sangu' : 'Tarik Jajan';
+            document.getElementById('pin-confirm-amount').innerText = `Rp ${nominal.toLocaleString('id-ID')}`;
+            document.getElementById('sangu-action-pin-input').value = '';
+
+            closeSanguActionModal();
+            document.getElementById('modal-sangu-pin-verify').classList.remove('hidden');
+            setTimeout(() => document.getElementById('sangu-action-pin-input').focus(), 100);
+            lucide.createIcons();
+        }
+
+        function closeSanguPinModal() {
+            document.getElementById('modal-sangu-pin-verify').classList.add('hidden');
+            pendingSanguPayload = null;
+        }
+
+        // EKSEKUSI SETELAH PIN TERVERIFIKASI
+        function executeVerifiedSanguTransaction(e) {
+            e.preventDefault();
+            const pinVal = document.getElementById('sangu-action-pin-input').value;
+
+            if (pinVal !== adminPin) {
+                showToast("PIN Keamanan Salah!", "error");
+                return;
+            }
+
+            if (!pendingSanguPayload) return;
+
+            const { id, transType, nominal, note, editIndex } = pendingSanguPayload;
             const s = santriList.find(item => item.id === id);
             if (!s) return;
 
@@ -2142,7 +2319,7 @@
                 oldTrans.amount = nominal;
                 oldTrans.note = note || (transType === 'Setor' ? 'Titipan sangu' : 'Jajan kantin');
 
-                showToast("Koreksi transaksi sangu berhasil disimpan!");
+                showToast("Perbaikan transaksi sangu berhasil disimpan!");
             } else {
                 if (transType === 'Tarik' && nominal > s.sanguBalance) {
                     showToast("Saldo sangu santri tidak mencukupi!", "error");
@@ -2161,45 +2338,118 @@
                     note: note || (transType === 'Setor' ? 'Titipan sangu' : 'Jajan kantin')
                 });
 
-                showToast(`Penarikan sangu Rp ${nominal.toLocaleString('id-ID')} berhasil!`);
+                showToast(`Transaksi ${transType} Rp ${nominal.toLocaleString('id-ID')} berhasil!`);
             }
 
             syncToFirebaseAndSheet();
-            closeSanguActionModal();
+            closeSanguPinModal();
         }
 
+        // HAPUS TRANSAKSI SANGU DENGAN ROLLBACK SALDO
+        function deleteSanguTransaction(santriId, historyIndex) {
+            const inputPin = prompt("Masukkan PIN Keamanan untuk menghapus transaksi ini:");
+            if (inputPin !== adminPin) {
+                if (inputPin !== null) showToast("PIN Keamanan Salah!", "error");
+                return;
+            }
+
+            const s = santriList.find(item => item.id === santriId);
+            if (!s || !s.sanguHistory || !s.sanguHistory[historyIndex]) return;
+
+            const item = s.sanguHistory[historyIndex];
+
+            // Rollback saldo
+            if (item.type === 'Setor') {
+                s.sanguBalance -= item.amount;
+            } else {
+                s.sanguBalance += item.amount;
+            }
+
+            s.sanguHistory.splice(historyIndex, 1);
+            syncToFirebaseAndSheet();
+            closeDetailTransModal();
+            showToast("Transaksi berhasil dihapus & saldo telah di-rollback!");
+        }
+
+        // KARTU DETAIL POPUP TRANSAKSI
+        function openDetailTransModal(santriId, historyIndex) {
+            const s = santriList.find(item => item.id === santriId);
+            if (!s || !s.sanguHistory || !s.sanguHistory[historyIndex]) return;
+
+            const item = s.sanguHistory[historyIndex];
+
+            document.getElementById('trans-detail-date').innerText = item.date;
+            document.getElementById('trans-detail-nama').innerText = s.nama;
+            document.getElementById('trans-detail-type').innerText = item.type;
+            document.getElementById('trans-detail-type').className = `font-bold ${item.type === 'Setor' ? 'text-emerald-700' : 'text-amber-800'}`;
+            document.getElementById('trans-detail-amount').innerText = `Rp ${item.amount.toLocaleString('id-ID')}`;
+            document.getElementById('trans-detail-note').innerText = item.note || '-';
+
+            document.getElementById('btn-trans-edit').onclick = () => {
+                closeDetailTransModal();
+                openSanguActionModal(s.id, item.type, historyIndex);
+            };
+
+            document.getElementById('btn-trans-delete').onclick = () => {
+                deleteSanguTransaction(s.id, historyIndex);
+            };
+
+            document.getElementById('modal-sangu-detail-trans').classList.remove('hidden');
+            lucide.createIcons();
+        }
+
+        function closeDetailTransModal() { document.getElementById('modal-sangu-detail-trans').classList.add('hidden'); }
+
+        // RIWAYAT KASIR DENGAN FILTERISASI LENGKAP
         function renderKasirHistoryTable() {
             const tbody = document.getElementById('kasir-history-tbody');
+            const searchVal = document.getElementById('filter-kasir-search').value.toLowerCase().trim();
+            const fType = document.getElementById('filter-kasir-type').value;
+            const fTime = document.getElementById('filter-kasir-time').value;
+
             let allHistory = [];
+            const now = new Date();
+            const todayStr = getFullFormattedDate(now).split(' - ')[0]; // Hari, Tanggal saja
 
             santriList.forEach(s => {
                 if (s.isSanguRegistered && s.sanguHistory) {
                     s.sanguHistory.forEach((h, idx) => {
-                        allHistory.push({
-                            santriId: s.id,
-                            santriNama: s.nama,
-                            historyIndex: idx,
-                            date: h.date,
-                            type: h.type,
-                            amount: h.amount,
-                            note: h.note
-                        });
+                        let passTime = true;
+
+                        if (fTime === 'today') {
+                            passTime = h.date.includes(todayStr);
+                        }
+
+                        if (passTime && 
+                            (fType === 'all' || h.type === fType) &&
+                            (s.nama.toLowerCase().includes(searchVal))) {
+                            allHistory.push({
+                                santriId: s.id,
+                                santriNama: s.nama,
+                                historyIndex: idx,
+                                date: h.date,
+                                type: h.type,
+                                amount: h.amount,
+                                note: h.note
+                            });
+                        }
                     });
                 }
             });
 
             if (allHistory.length === 0) {
-                tbody.innerHTML = `<tr><td colspan="6" class="p-4 text-center text-stone-400 italic">Belum ada riwayat transaksi penarikan kasir.</td></tr>`;
+                tbody.innerHTML = `<tr><td colspan="6" class="p-4 text-center text-stone-400 italic">Riwayat transaksi tidak ditemukan sesuai filter.</td></tr>`;
             } else {
-                tbody.innerHTML = allHistory.slice(0, 15).map(item => `
-                    <tr class="hover:bg-amber-50/50 border-b">
+                tbody.innerHTML = allHistory.slice(0, 20).map(item => `
+                    <tr class="hover:bg-amber-50/50 border-b cursor-pointer" onclick="openDetailTransModal(${item.santriId}, ${item.historyIndex})">
                         <td class="p-3 font-mono text-[11px] font-semibold text-slate-700">${item.date}</td>
                         <td class="p-3 font-bold text-slate-900">${item.santriNama}</td>
                         <td class="p-3 font-bold ${item.type === 'Setor' ? 'text-emerald-700' : 'text-amber-800'}">${item.type}</td>
                         <td class="p-3 text-right font-mono font-black text-slate-900">Rp ${item.amount.toLocaleString('id-ID')}</td>
-                        <td class="p-3 text-stone-600">${item.note || '-'}</td>
-                        <td class="p-3 text-center">
+                        <td class="p-3 text-stone-600 truncate max-w-[120px]">${item.note || '-'}</td>
+                        <td class="p-3 text-center space-x-1" onclick="event.stopPropagation()">
                             <button onclick="openSanguActionModal(${item.santriId}, '${item.type}', ${item.historyIndex})" class="text-blue-600 hover:underline font-bold text-xs">Edit</button>
+                            <button onclick="deleteSanguTransaction(${item.santriId}, ${item.historyIndex})" class="text-rose-600 hover:underline font-bold text-xs">Hapus</button>
                         </td>
                     </tr>
                 `).join('');
@@ -2477,8 +2727,8 @@
             if (!s.sanguHistory || s.sanguHistory.length === 0) {
                 listContainer.innerHTML = `<div class="p-3 bg-stone-50 rounded-xl text-stone-400 italic text-[11px]">Belum ada riwayat transaksi.</div>`;
             } else {
-                listContainer.innerHTML = s.sanguHistory.slice(0, 3).map(h => `
-                    <div class="p-2.5 bg-stone-50 border rounded-xl flex justify-between items-center">
+                listContainer.innerHTML = s.sanguHistory.slice(0, 3).map((h, idx) => `
+                    <div class="p-2.5 bg-stone-50 border rounded-xl flex justify-between items-center cursor-pointer hover:bg-stone-100" onclick="openDetailTransModal(${s.id}, ${idx})">
                         <div>
                             <strong class="${h.type === 'Setor' ? 'text-emerald-700' : 'text-amber-800'} font-bold block text-xs">${h.type}: Rp ${h.amount.toLocaleString('id-ID')}</strong>
                             <span class="text-stone-500 text-[10px] font-semibold block">${h.date} - ${h.note}</span>
